@@ -1,5 +1,5 @@
 let {LinkedList} = require('./list.js');
-let {take} = require('./utils.js');
+let {take, takeFunction} = require('./utils.js');
 
 class Book {
     constructor(title, author, price, rating, cover) {
@@ -64,6 +64,7 @@ let filterByRatingRange = BookList.filter(take(null,{"rating":range(1,4.5)}));
 console.log(filterByRatingRange.forEach(item=>console.log("title: "+item.title+" rating: "+item.rating)));
 console.log('----------------------------------------------------');
 
+console.log('-----filtering books with author and price with plain object param-----')
 function endsWithcomparision(value){
     return function(item){
         return item.toLowerCase().endsWith(value.toLowerCase());
@@ -72,3 +73,16 @@ function endsWithcomparision(value){
 
  let filterByTitle = BookList.filter({'author':endsWithcomparision('Mishra'),'title':"The Accursed God"});
  console.log(filterByTitle.size());
+console.log('--------------------------------------------------------')
+
+console.log('-------filtering books with rating betwen 4.0 to 4.5 with function parameter----------');
+function between(rating1,rating2){
+    return v=>v.rating>=rating1 && v.rating<=rating2;
+}
+
+let filteredList= BookList.filter(takeFunction(null,between(4.0,4.5)));
+filteredList.forEach(item=>console.log("title: "+item.title+" rating: "+item.rating));
+
+console.log('-----plain function result------');
+let plainFunctionResult = BookList.filter(between(4.0,4.5));
+plainFunctionResult.forEach(item=>console.log("title: "+item.title+" rating: "+item.rating));
