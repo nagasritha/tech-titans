@@ -218,22 +218,29 @@ describe.only('findPrimesPromise', function () {
 
 
     //kirans test code
-    describe("Abort Testing", function () {
-        it("should handle abort", function (done) {
-          const min = 1;
-          const max = 10;
-          const cb = (res) => {
-            if (res.index === 5) {
-                abort()
-            }
-          };
-         
-          const { abort } = findPrimesInteractive(min, max, cb);
-         
-        done();
-       
-        });
-      });
+   
+ 
+describe("Abort Testing", function () {
+  it("checkng with abort function", function (done) {
+    let result = [];
+    const cb = (res) => {
+      if (res.message === "prime") {
+        result.push(res.prime);
+        expect(res.message).to.been.equal("prime");
+      }
+      if (res.index === 5) {
+        abort();
+        expect(result.length).to.be.equal(res.primes.length);
+      }
+    };
+ 
+    const { abort } = findPrimesInteractive(1, 10, cb);
+    done();
+  });
+});
+ 
+test case
+ 
 
 
 });
