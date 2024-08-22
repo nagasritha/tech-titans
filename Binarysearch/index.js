@@ -87,5 +87,4 @@ class BinarySearchTree {
 try {
     module.exports = { BinarySearchTree };
 } catch (e) {
-    // Handle module export for environments where it's not supported
-}
+    }

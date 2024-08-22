@@ -191,15 +191,14 @@ class LinkedList {
 
 
 
-    map(mapper) {
-        var result = new LinkedList();
-
-        this.forEach(v => {
-            result.append(mapper(v));
-        });
-
-        return result;
+    *map(mapper) {
+        let current = this._first;
+        while (current) {
+            yield mapper(current.value); // Corrected to `yield`
+            current = current.next;
+        }
     }
+    
 
     sum(property) {
         let result = 0;
