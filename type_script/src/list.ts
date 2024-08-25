@@ -130,6 +130,16 @@ class LinkedList<T>{
         }
     }
 
+    toString():string{
+        let str='LinkedList(\t'
+        for(let n=this.first;n;n=n.next){
+            str+=n.data + '\t'
+        }
+
+        return str+')'
+
+    }
+
     filter(matcher: (value: T) => boolean): LinkedList<T> {
         const result = new LinkedList<T>();
 
