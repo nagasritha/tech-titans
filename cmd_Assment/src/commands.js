@@ -13,7 +13,7 @@ const [, , command, ...args] = process.argv;
 
 prom
   .command("authors")
-  .alias("-a")
+  .alias("a-")
   .description("Print all authors")
   .action(() => {
     li.forEach((v) => {

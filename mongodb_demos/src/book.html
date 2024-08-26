@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book's Web</title>
+    <link rel="stylesheet" href="book.css">
+</head>
+<body>
+    <!-- nav  bar -->
+    <nav class="navBar">
+        <div class="navTitle">
+            <h1>Book's Web</h1>
+        </div>
+        <div class="navLinks">
+            <a href="#author">Author</a>
+            <a href="#addAuthor">Add Author</a>
+            <a href="#books"  >Books</a>
+            <a href="#addBooks">Add Books</a>
+        </div>
+
+        <!-- log out drop down -->
+        <div class="navMembership">
+            <h2 id="membershipTitle">Membership</h2>
+            <div id="dropdownMenu">
+                <div id="guestOptions">
+                    <a href="#login" class="sign-a" id="signIn">Sign In</a>
+                    <a href="#signUp" class="sign-a">  Sign Up</a>
+                </div>
+                <div id="loggedInOptions" style="display: none;">
+                    <span id="userName">Welcome, User!</span>
+                    <div id="userMenu" style="display: none;">
+                        <a href="#profile">Profile</a>
+                        <a href="#bookshelf">Bookshelf</a>
+                        <a href="#logout" id="logout">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- login f -->
+    <div class="loginContainer" id="loginFormContainer">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <p id="loginStatus"></p>
+    </div>
+
+
+    <!-- body -->
+    <div  id="books" class="content">
+        <h3>View Books</h3>
+        <div class="book-grid">
+            <a href="#book1">
+                <img src="https://covers.openlibrary.org/b/id/7222246-L.jpg" alt="Book 1">
+                <p>Book Title 1</p>
+            </a>
+            <a href="#book2">
+                <img src="https://covers.openlibrary.org/b/id/7222247-L.jpg" alt="Book 2">
+                <p>Book Title 2</p>
+            </a>
+            <a href="#book3">
+                <img src="https://covers.openlibrary.org/b/id/7222248-L.jpg" alt="Book 3">
+                <p>Book Title 3</p>
+            </a>
+        </div>
+    </div>
+    
+
+    <script src="book.js"></script>
+</body>
+</html>
