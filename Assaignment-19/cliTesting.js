@@ -23,4 +23,4 @@ cli.registerCommand('get-book-by-id', (args) => {
     }
 }, 'Gives book by id', ['find-book-by-id', 'lookup-book-by-id']);
 
-cli.run(process.argv.slice(2));
+cli.run(process.argv);

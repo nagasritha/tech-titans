@@ -37,6 +37,7 @@ class CLI {
     }
 
     run(args) {
+        args = args.slice(2);
         if (args.length === 0) {
             this.startPrompt();
             return;
