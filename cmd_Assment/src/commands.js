@@ -168,33 +168,3 @@ prom.parse(process.argv);
 //       "Unknown command. Available commands: greet, info, echo, calculate"
 //     );
 // }
-
-// Function to handle 'greet' command
-
-// Function to handle 'echo' command
-// function handleEcho(args) {
-//   console.log(args.join(" "));
-// }
-
-// Function to handle 'calculate' command
-// function handleCalculate(args) {
-//   if (args.length < 2) {
-//     console.log("Usage: calculate <operation> <num1> <num2> ...");
-//     return;
-//   }
-
-//   const [operation, ...numbers] = args;
-
-//   if (operation === "add") {
-//     const result = numbers.reduce((sum, num) => sum + parseFloat(num), 0);
-//     console.log(`Sum: ${result}`);
-//   } else if (operation === "multiply") {
-//     const result = numbers.reduce(
-//       (product, num) => product * parseFloat(num),
-//       1
-//     );
-//     console.log(`Product: ${result}`);
-//   } else {
-//     console.log("Unknown operation. Use 'add' or 'multiply'.");
-//   }
-// }
