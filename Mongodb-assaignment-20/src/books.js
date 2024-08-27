@@ -30,7 +30,7 @@ async function getAllBooksByAuthor(author) {
 // Function to get books by author (case-insensitive)
 async function getAllBooksByAuthorCaseInsensitive(author) {
     const booksCollection = await getBooksCollection();
-    const book = await booksCollection.findOne({ author: new RegExp(author, 'i') });
+    const book = await booksCollection.findOne({ author: /`${author}`/ });
     return book;
 }
 
